@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genomics Agent - AI Research Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🧬 Genomics Agent</h1>
+                <p class="tagline">AI-Powered Research Assistant for Cancer Genomics</p>
+            </div>
+            <div class="status-badge" id="statusBadge">● Online</div>
+        </header>
+
+        <main class="main-content">
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div class="chat-history" id="chatHistory">
+                    <div class="welcome-message">
+                        <h2>Welcome to Genomics Agent</h2>
+                        <p>Ask questions about genes, proteins, and research papers.</p>
+                        <div class="quick-genes">
+                            <span class="gene-tag">BRCA1</span>
+                            <span class="gene-tag">TP53</span>
+                            <span class="gene-tag">EGFR</span>
+                            <span class="gene-tag">BRCA2</span>
+                            <span class="gene-tag">PTEN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <form id="questionForm" class="question-form">
+                        <input 
+                            type="text" 
+                            id="questionInput" 
+                            placeholder="Ask about genes, proteins, or research..." 
+                            autocomplete="off"
+                            maxlength="500"
+                        >
+                        <button type="submit" id="submitBtn" class="submit-btn">
+                            <span>Send</span>
+                            <span class="loader" id="loader"></span>
+                        </button>
+                    </form>
+                    <div class="char-count">
+                        <span id="charCount">0</span>/500
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Examples -->
+                <div class="panel examples-panel">
+                    <h3>💡 Try These</h3>
+                    <div id="examplesList" class="examples-list"></div>
+                </div>
+
+                <!-- Genes Info -->
+                <div class="panel genes-panel">
+                    <h3>🔬 Supported Genes</h3>
+                    <div id="genesList" class="genes-list"></div>
+                </div>
+
+                <!-- Info -->
+                <div class="panel info-panel">
+                    <h3>ℹ️ About</h3>
+                    <ul class="info-list">
+                        <li>📊 10 Gene Expression Datasets</li>
+                        <li>🧫 5 Protein Structures</li>
+                        <li>📚 18 Research Papers</li>
+                        <li>✅ 85/85 Tests Passing</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
